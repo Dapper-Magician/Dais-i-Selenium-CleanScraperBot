@@ -1,0 +1,62 @@
+Code Base 1
+
+[Dais-I Project] = Deliver Code = (I want to make my job easier. It is a data entry position where I enter adult education student data (personal info, testing scores, attendance) into a web service called Dais-I. The web platform Dais-I has a log in screen, then a year select screen, and past that there are various windows you can click to. Once past the login and year select pages, you navigate to pages within the website. Primarily I work go to a currently running classes page, search the intended class, and spend most of my time in the attendance and roster pages. I am given excel spreadsheets called 'vouchers'. These excel sheets are locked for the most part but have a few sheets attached to them. One is Roster, which holds all student data(SocSecrty, Name, Sex, DOB, Country of Origin, Native Language, Race, Phone number, Address, City, Zip Code, and a few drop down boxes and tickable boxes. Finally, I would prefer to set up an environment that hosts a bot that I can run a virtual assistant through or briefly run one of my bot-like persona gpt prompts in order to quickly and intelligently handle the automated data extraction, the excel template creation, the data validation, and the web scraping where the excel sheet is used as a reference to input the correct the corresponding data into Dais-I.)
+
+1. import pandas as pd from openpyxl import Workbook from selenium import webdriver from bs4 import BeautifulSoup import requests
+
+class DaisiBot: def init(self, voucher_path): self.voucher_path = voucher_path self.driver = webdriver.Chrome() # assuming Chrome; adjust as necessary
+
+def read_voucher(self):
+    self.data = pd.read_excel(self.voucher_path)
+    self.validate_data()  # to be implemented
+
+def validate_data(self):
+    # Implement data validation here
+    pass
+
+def create_template(self):
+    # Implement Excel template creation here using openpyxl
+    pass
+
+def login(self, username, password):
+    # Use selenium to automate login
+    pass
+
+def navigate(self):
+    # Use selenium to navigate to the required pages
+    pass
+
+def enter_data(self):
+    # Use selenium to enter data
+    pass
+
+def run(self, username, password):
+    self.read_voucher()
+    self.create_template()
+    self.login(username, password)
+    self.navigate()
+    self.enter_data()
+    
+
+ import pandas as pd
+
+class DaisiBot: def init(self, voucher_path): self.voucher_path = voucher_path self.data = pd.DataFrame()
+
+def read_voucher(self):
+    self.data = pd.read_excel(self.voucher_path)
+    print("Voucher data read successfully.")
+
+def validate_data(self):
+    # Just an example validation, adjust according to your needs
+    if self.data.isnull().values.any():
+        print("Data contains null values. Please check the voucher.")
+    else:
+        print("Data validated successfully.")
+
+# Remaining methods...
+
+def run(self, username, password):
+    self.read_voucher()
+    self.validate_data()
+    # Remaining sequence...
+bot = DaisiBot("path/to/your/voucher.xlsx") bot.run("username", "password")
