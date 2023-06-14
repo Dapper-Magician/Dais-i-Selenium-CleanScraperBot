@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanScraperBot</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script> <!-- Add D3.js library -->
+</head>
+
+<body>
+  <div class="container">
+    <h1>CleanScraperBot</h1>
+    <form id="scraping-form">
+      <label for="url-input">URL:</label>
+      <input type="text" id="url-input" name="url">
+      <label for="css-selector-input">CSS Selector:</label>
+      <input type="text" id="css-selector-input" name="css-selector">
+      <button type="submit" id="scrape-button">Scrape</button>
+    </form>
+    <div id="output-data"></div>
+    <div id="loading-indicator" class="hidden"></div>
+    <div id="error-message" class="hidden"></div>
+    <div id="chart"></div> <!-- Add a container for the chart -->
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
